@@ -8,13 +8,17 @@ The workflow includes data exploration, preprocessing, NLP feature engineering, 
 
 The dataset contains customer reviews together with numerical, categorical, and text-based features used to predict the `Recommended IND` target.
 
-![Dataset Preview](./images/dataset_preview.png)
+<p align="center">
+  <img src="./images/dataset_preview.png" width="750">
+</p>
 
 ### Final Model Result
 
 After training and comparing the candidate models, the final model was selected based on its evaluation performance on the test data.
 
-![Final Model Result](./images/final_model_result.png)
+<p align="center">
+  <img src="./images/final_model_result.png" width="500">
+</p>
 
 ## Getting Started
 
@@ -59,7 +63,7 @@ The project uses the following main dependencies:
 2. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Alaa-1989/dsnd-pipelines-project.git
    ```
 
 3. Navigate to the project directory:
@@ -83,7 +87,7 @@ The project uses the following main dependencies:
 
    **Windows**
    ```bash
-   .venv\Scripts\activate
+   .venv\Scripts\Activate.ps1
    ```
 
 6. Upgrade pip:
