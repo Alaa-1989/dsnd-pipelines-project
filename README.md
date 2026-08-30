@@ -35,8 +35,8 @@ Before installing the project dependencies, make sure the following are availabl
 You can verify Python and pip using:
 
 ```bash
-python --version
-python -m pip --version
+python3 --version
+python3 -m pip --version
 ```
 
 If Python is not installed, install it before continuing. Anaconda can also be used as an optional Python distribution and environment manager.
@@ -58,7 +58,7 @@ The project uses the following main dependencies:
 
 ### Installation
 
-1. Open a terminal.
+1. Open a terminal and navigate to the directory where you want to download the project.
 
 2. Clone the repository:
 
@@ -75,7 +75,7 @@ The project uses the following main dependencies:
 4. Create a virtual environment:
 
    ```bash
-   python -m venv .venv
+   python3 -m venv .venv
    ```
 
 5. Activate the virtual environment:
@@ -116,6 +116,19 @@ The project uses the following main dependencies:
 
 10. In Jupyter Notebook, open `Project_Data_Science_Pipeline.ipynb` and run the notebook cells from top to bottom.
 
+### Troubleshooting
+
+If the notebook becomes slow, unresponsive, or difficult to open because of saved cell outputs, you can clear all notebook outputs directly from the terminal without opening Jupyter:
+
+```bash
+jupyter nbconvert \
+  --to notebook \
+  --ClearOutputPreprocessor.enabled=True \
+  --inplace \
+  Project_Data_Science_Pipeline.ipynb
+```
+This removes saved cell outputs only. It does not remove notebook code, Markdown cells, or the notebook structure.
+
 ## Project Workflow
 
 Run `Project_Data_Science_Pipeline.ipynb` from top to bottom.
@@ -143,8 +156,8 @@ The project deliverables include:
 Complete data science pipeline, including data exploration, preprocessing, NLP feature engineering, model training, hyperparameter tuning, and evaluation.
 - `data/reviews.csv`
 Dataset used by the project.
-- `images/`
-  Project images used in the README, including the dataset preview and final model result.
+- `images/outputs`
+  README images and selected model output screenshots
 - `requirements.txt`
 Python package versions required to reproduce the project environment.
 - `README.md`
@@ -160,11 +173,18 @@ dsnd-pipelines-project/
 │   └── reviews.csv
 ├── images/
 │   ├── dataset_preview.png
-│   └── final_model_result.png
+│   ├── final_model_result.png
+│   └── outputs/
+│       ├── logistic_regression_baseline_evaluation.png
+│       ├── logistic_regression_tuned_evaluation.png
+│       ├── random_forest_baseline_evaluation.png
+│       ├── random_forest_tuned_evaluation.png
+│       └── model_comparison.png
 ├── Project_Data_Science_Pipeline.ipynb
-├── LICENSE.txt
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+├── LICENSE.txt
+└── .gitignore
 ```
 
 ## Built With
