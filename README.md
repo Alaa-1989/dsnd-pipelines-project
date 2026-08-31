@@ -14,10 +14,10 @@ The dataset contains customer reviews together with numerical, categorical, and 
 
 ### Final Model Result
 
-After training and comparing the candidate models, the final model was selected based on its evaluation performance on the test data.
+After comparing the candidate models using cross-validation on the training data, the Tuned Logistic Regression model was selected as the final model.
 
 <p align="center">
-  <img src="./images/final_model_result.png" width="500">
+  <img src="./images/final_confusion_matrix.png" width="650">
 </p>
 
 ## Getting Started
@@ -142,10 +142,10 @@ The notebook follows an end-to-end data science pipeline that:
 5. Uses TF-IDF to transform text features.
 6. Builds classification pipelines using Logistic Regression and Random Forest.
 7. Performs hyperparameter tuning.
-8. Evaluates the trained models on the test data using classification metrics.
-9. Compares the performance of the trained models.
-10. Selects the final model based on the evaluation results.
-11. Visualizes the final model's performance using evaluation plots.
+8. Compares candidate models using cross-validation Macro F1 scores on the training data only.
+9. Selects the final model based on training cross-validation performance.
+10. Evaluates the selected final model once on the held-out test set.
+11. Visualizes the final model performance using a confusion matrix.
 12. Summarizes the results and presents the final project conclusion.
 
 ## Project Instructions
@@ -173,13 +173,10 @@ dsnd-pipelines-project/
 │   └── reviews.csv
 ├── images/
 │   ├── dataset_preview.png
-│   ├── final_model_result.png
+│   ├── final_confusion_matrix.png
 │   └── outputs/
-│       ├── logistic_regression_baseline_evaluation.png
-│       ├── logistic_regression_tuned_evaluation.png
-│       ├── random_forest_baseline_evaluation.png
-│       ├── random_forest_tuned_evaluation.png
-│       └── model_comparison.png
+│       ├── final_model_evaluation.png
+│       └── model_comparison_cv.png
 ├── Project_Data_Science_Pipeline.ipynb
 ├── README.md
 ├── requirements.txt
@@ -222,6 +219,7 @@ dsnd-pipelines-project/
 ### Model Selection & Tuning
 - train_test_split
 - RandomizedSearchCV
+- cross_val_score
 
 ### Model Evaluation
 - accuracy_score
